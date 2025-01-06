@@ -7,7 +7,11 @@ interface Props {
 
 const TimezonePicker = ({ value, onChange }: Props) => {
   return (
-    <select value={value} onChange={(e) => onChange(e.target.value)}>
+    <select
+      className="bg-transparent appearance-none text-xl font-bold text-dark01 text-center"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+    >
       {Intl.supportedValuesOf("timeZone").map((timezone: string) => (
         <option key={timezone}>{timezone}</option>
       ))}
