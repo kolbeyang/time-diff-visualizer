@@ -38,7 +38,6 @@ const HourBar = ({
     <div
       className={cn(
         "flex-1 flex flex-col overflow-hidden shrink-0 w-[40px]",
-        isNow ? "w-[60px]" : "w-[40px]",
         justifyClassName,
       )}
     >

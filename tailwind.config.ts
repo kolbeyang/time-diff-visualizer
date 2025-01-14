@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import colors from "./colors";
+import scrollbarHide from "tailwind-scrollbar-hide";
 
 export default {
   content: [
@@ -12,5 +13,5 @@ export default {
       colors,
     },
   },
-  plugins: [],
+  plugins: [scrollbarHide],
 } satisfies Config;

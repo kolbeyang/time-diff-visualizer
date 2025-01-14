@@ -6,6 +6,7 @@ import ScrollableBar from "./ScrollableBar";
 import TimeIndicator from "./TimeIndicator";
 import TimezonePicker from "./TimezonePicker";
 import { getDiffDays } from "./utils";
+import useDocumentHeight from "@/hooks/useDocumentHeight";
 
 interface AppState {
   is24HourFormat: boolean;
@@ -25,11 +26,12 @@ export const AppContext = createContext<AppContextValue>({
 });
 
 const Main = () => {
-  const [timezoneA, setTimezoneA] = useState("America/Los_Angeles");
-  const [timezoneB, setTimezoneB] = useState("Asia/Seoul");
+  const [timezoneA, setTimezoneA] = useState("Asia/Seoul");
+  const [timezoneB, setTimezoneB] = useState("America/New_York");
   const [appState, setAppState] = useState(defaultAppState);
 
   const [currentTime, setCurrentTime] = useState(DateTime.now());
+  const docHeight = useDocumentHeight();
 
   const diffDays = useMemo(
     () => getDiffDays(timezoneA, timezoneB),
@@ -56,7 +58,10 @@ const Main = () => {
 
   return (
     <AppContext.Provider value={{ ...appState, setState: setAppState }}>
-      <div className="bg-background text-dark h-screen w-screen flex flex-col items-center justify-between py-7">
+      <div
+        className="bg-background text-dark w-screen flex flex-col items-center justify-between py-7"
+        style={{ height: docHeight }}
+      >
         <TimezonePicker value={timezoneA} onChange={setTimezoneA} />
         <TimeIndicator timezone={timezoneA} value={currentTime} diffDays={0} />
         <ScrollableBar timezoneA={timezoneA} timezoneB={timezoneB} />
