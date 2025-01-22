@@ -24,6 +24,14 @@ const ScrollableBar = ({ timezoneA, timezoneB }: Props) => {
           const time = start.plus({ hours: i });
           const timeA = time.setZone(timezoneA);
           const timeB = time.setZone(timezoneB);
+
+          console.log(
+            "timeA hour",
+            timeA.startOf("hour").hour,
+            "now hour",
+            DateTime.now().startOf("hour").hour,
+          );
+
           const isNow =
             timeA.startOf("hour").hour === DateTime.now().startOf("hour").hour;
           const compatibility =

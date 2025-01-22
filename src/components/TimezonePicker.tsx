@@ -11,6 +11,7 @@ import {
 } from "@radix-ui/react-dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { useMemo, useState } from "react";
+import Button from "./ui/Button";
 
 interface Props {
   value: string;
@@ -31,9 +32,9 @@ const TimezonePicker = ({ value, onChange }: Props) => {
   return (
     <Dialog onOpenChange={() => setSearchValue("")}>
       <DialogTrigger asChild>
-        <button className="text-xl font-bold text-dark01 text-center">
+        <Button className="text-xl font-bold text-dark01 text-center">
           {value}
-        </button>
+        </Button>
       </DialogTrigger>
       <DialogPortal>
         <DialogOverlay className="" />
@@ -43,14 +44,14 @@ const TimezonePicker = ({ value, onChange }: Props) => {
           </VisuallyHidden>
           <div className="flex flex-col max-w-[500px] w-full py-[28px] px-[24px] h-full gap-2">
             <DialogClose asChild>
-              <button className="text-dark text-xl" aria-label="Close">
+              <Button className="text-dark text-xl" aria-label="Close">
                 Close
-              </button>
+              </Button>
             </DialogClose>
             <input
               autoFocus
               value={searchValue}
-              className="w-full bg-background01 outline-none py-[8px] px-[20px] text-2xl rounded-lg text-dark"
+              className="w-full bg-background-dark-1 outline-none py-[8px] px-[20px] text-2xl rounded-lg text-dark"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search timezone"
             />

@@ -59,8 +59,8 @@ const Main = () => {
   return (
     <AppContext.Provider value={{ ...appState, setState: setAppState }}>
       <div
-        className="bg-background text-dark w-screen flex flex-col items-center justify-between py-7"
-        style={{ height: docHeight }}
+        className="bg-background text-dark w-screen flex flex-col items-center justify-between py-7 h-screen"
+        style={docHeight ? { height: docHeight } : {}}
       >
         <TimezonePicker value={timezoneA} onChange={setTimezoneA} />
         <TimeIndicator timezone={timezoneA} value={currentTime} diffDays={0} />

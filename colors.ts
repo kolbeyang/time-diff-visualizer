@@ -1,6 +1,6 @@
 const colors = {
   background: "rgb(250, 244, 237)",
-  background01: "rgb(206, 202, 205)",
+  "background-dark-1": "rgb(206, 202, 205)",
   textLight: "rgb(250, 244, 237)",
   dark: "rgb(87, 82, 121)",
   dark01: "rgb(121, 117, 147)",

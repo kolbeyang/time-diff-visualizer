@@ -43,7 +43,7 @@ const HourBar = ({
     >
       <div
         className={cn(
-          "bg-background01 w-full flex flex-col rounded-md",
+          "bg-background-dark-1 w-full flex flex-col rounded-md",
           justifyClassName,
           {
             "rounded-r-3xl": isEndHour,
@@ -60,7 +60,7 @@ const HourBar = ({
               "rounded-r-3xl": isEndHour,
               "rounded-l-3xl": isStartHour,
               "opacity-40": !isToday,
-              "": isNow,
+              "border-2 border-red-500": isNow,
             },
           )}
           style={{

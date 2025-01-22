@@ -20,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-1198833545019540" />
+      </head>
       <body className={`${lato.variable} antialiased`}>{children}</body>
     </html>
   );

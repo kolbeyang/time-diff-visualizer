@@ -21,11 +21,6 @@ const ScrollWrapper = ({ children, className }: Props) => {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
     });
 
-    // TODO: remove
-    //lenis.on("scroll", ({ scroll, progress }) => {
-    //  console.log("scroll", scroll, "progress", progress);
-    //});
-
     const onScroll = (time: number) => {
       lenis.raf(time); // Update Lenis on every animation frame
     };

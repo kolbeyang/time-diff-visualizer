@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 
-const defaultHeight = 500;
-
 const useDocumentHeight = () => {
-  const [docHeight, setDocHeight] = useState(defaultHeight);
+  const [docHeight, setDocHeight] = useState<number | null>(null);
 
   useEffect(() => {
     const updateHeight = () => {
