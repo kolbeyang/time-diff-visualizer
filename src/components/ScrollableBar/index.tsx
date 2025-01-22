@@ -17,28 +17,24 @@ const ScrollableBar = ({ timezoneA, timezoneB }: Props) => {
   const start = useMemo(() => {
     return DateTime.now().setZone(timezoneA).startOf("day");
   }, [timezoneA, timezoneB]);
+
+  const nowInTimezoneA = DateTime.now().setZone(timezoneA);
+
   return (
     <div className="h-[200px] max-w-full items-center overflow-x-auto scrollbar-hide">
       <div className="flex px-2 gap-1 items-center h-full w-fit">
-        {times(24, (i) => {
-          const time = start.plus({ hours: i });
+        {times(24, (hours) => {
+          const time = start.plus({ hours: hours });
           const timeA = time.setZone(timezoneA);
           const timeB = time.setZone(timezoneB);
 
-          console.log(
-            "timeA hour",
-            timeA.startOf("hour").hour,
-            "now hour",
-            DateTime.now().startOf("hour").hour,
-          );
+          const isNow = hours === nowInTimezoneA.hour;
 
-          const isNow =
-            timeA.startOf("hour").hour === DateTime.now().startOf("hour").hour;
           const compatibility =
             awakeByHour[timeA.hour] * awakeByHour[timeB.hour];
           const isToday = getDiffDays(timezoneB, timezoneA, time) === 0;
           return (
-            <div key={i} className={cn("flex flex-col gap-1 h-full")}>
+            <div key={hours} className={cn("flex flex-col gap-1 h-full")}>
               <HourBar
                 isNow={isNow}
                 isToday

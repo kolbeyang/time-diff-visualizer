@@ -8,7 +8,7 @@ const Button = forwardRef<
   return (
     <button
       className={cn(
-        "px-4 py-2 text-dark rounded-md hover:bg-dark/5 active:bg-dark/10",
+        "px-4 py-2 text-dark-5 rounded-md hover:bg-dark/5 active:bg-dark/10",
         className,
       )}
       ref={ref}
