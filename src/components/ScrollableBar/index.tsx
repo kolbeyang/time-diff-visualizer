@@ -22,7 +22,7 @@ const ScrollableBar = ({ timezoneA, timezoneB }: Props) => {
 
   return (
     <div className="h-[200px] max-w-full items-center overflow-x-auto scrollbar-hide">
-      <div className="flex px-2 gap-1 items-center h-full w-fit">
+      <div className="flex px-2 gap-[2px] items-center h-full w-fit">
         {times(24, (hours) => {
           const time = start.plus({ hours: hours });
           const timeA = time.setZone(timezoneA);
@@ -34,7 +34,7 @@ const ScrollableBar = ({ timezoneA, timezoneB }: Props) => {
             awakeByHour[timeA.hour] * awakeByHour[timeB.hour];
           const isToday = getDiffDays(timezoneB, timezoneA, time) === 0;
           return (
-            <div key={hours} className={cn("flex flex-col gap-1 h-full")}>
+            <div key={hours} className={cn("flex flex-col gap-[2px] h-full")}>
               <HourBar
                 isNow={isNow}
                 isToday

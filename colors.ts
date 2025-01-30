@@ -15,21 +15,23 @@ const rosepine = {
 };
 
 const fresh = {
-  highlight: "rgb(234, 157, 52)",
-  primary: "rgb(86, 148, 159)",
+  highlight: "rgb(254, 153, 153)",
+  primary: "rgb(255, 95, 95)",
 
-  "light-5": "rgb(250, 244, 237)",
-  "light-4": "rgb(206, 202, 205)",
+  "light-5": "rgb(255, 236, 234)",
+  "light-4": "rgb(255, 205, 208)",
 
-  "dark-5": "rgb(253, 248, 226)",
-  "dark-4": "rgb(121, 117, 147)",
+  "dark-5": "rgb(19, 80, 179)",
+  "dark-4": "rgb(19, 80, 179)",
+  //"dark-5": "rgb(0, 102, 115)",
+  //"dark-4": "rgb(0, 125, 141)",
 
-  "am-light": "rgb(243, 221, 157)",
-  "am-dark": "rgb(177, 181, 101)",
-  "pm-light": "rgb(196, 195, 227)",
-  "pm-dark": "rgb(80, 78, 118)",
+  "am-light": "rgb(254, 155, 154)",
+  "am-dark": "rgb(0, 69, 170)",
+  "pm-light": "rgb(255, 133, 138)",
+  "pm-dark": "rgb(0, 69, 170)",
 };
 
-const colors = rosepine;
+const colors = fresh;
 
 export default colors;
