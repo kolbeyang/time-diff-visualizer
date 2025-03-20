@@ -46,8 +46,6 @@ const TimezonePicker = ({ value, onChange }: Props) => {
       all: true,
     });
 
-    console.log(fuzzyResults);
-
     return map(fuzzyResults, "target");
   }, [searchValue, selectedContinent]);
 
